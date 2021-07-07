@@ -1,70 +1,96 @@
 .btn-axa {
-  @include typo-16();
+  @include typo-14();
   @include button-primary($color-button-primary, $color-button-secondary, $color-white);
-  @include button-animation($color-button-secondary);
   border-width: 0;
   border-bottom-width: 2px;
   border-style: solid;
-
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   &.btn.btn-lg {
-    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-lg,
+    @include button-size($padding-large-vertical, $padding-large-horizontal, 14px,
       $btn-border-radius-lg);
 
     border-width: 0;
     border-bottom-width: 2px;
+    padding: 17px 28px;
+
+    &:focus,
+    &:active,
+    &.focus {
+      border-width: 2px;
+    }
   }
 
   &.btn.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
       $font-size-sm, $line-height-sm, $btn-border-radius-sm);
-    @include typo-16();
+    @include typo-14();
+    padding: 9px 16px;
   }
 }
 
 .btn {
   @include btn-split-icon($padding-base-vertical, $padding-base-horizontal, $font-size-base,
     $line-height-base, $btn-border-radius);
-  @extend .typo-16;
+  @include typo-14();
   // slight margin-bottom to prevent gluing buttons together when they break into two lines
   margin-bottom: 10px;
+  padding: 20px 13px;
+  border: 0px;
+  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.2);
 
   &.btn-lg {
     // Reduce vertical padding by 1px because we increase border-width by 1px
     @include btn-split-icon(($padding-large-vertical - 0.06667rem), $padding-large-horizontal,
       $font-size-lg, $line-height-lg, $btn-border-radius-lg);
-    @include typo-16();
-
+    @include typo-14();
+    font-size: 14px;
     border-width: 2px;
+    padding: 17px 28px;
   }
 
   &.btn-sm {
     @include btn-split-icon($padding-small-vertical, $padding-small-horizontal,
       $font-size-sm, $line-height-sm, $btn-border-radius-sm);
-    @include typo-16();
+    @include typo-14();
+    font-size: 14px;
+    padding: 9px 16px;
   }
 
   &.btn-xs {
     @include btn-split-icon($padding-xs-vertical, $padding-xs-horizontal, $font-size-sm,
       $line-height-sm, $btn-border-radius-sm);
-    @include typo-16();
+    @include typo-14();
   }
 
   font-weight: 600;
   letter-spacing: 0.08em;
-  line-height: 1.5;
+  line-height: 14px;
   text-transform: uppercase;
 
   .badge {
     font-size: .9em;
   }
 
-  &:hover,
-  &:focus,
-  &.focus {
+  &:hover {
     color: $color-white;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), $color-button-primary;
+  }
+
+  &:focus,
+  &:active,
+  &.focus {
+      border: 2px solid $color-white;
+      outline: 2px solid $color-button-primary;
+    border-width: 2px;
+    margin: 2px 2px 12px 2px;
+    background: $color-button-primary;
+  }
+
+  &:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), $color-button-primary;
   }
 }
 
