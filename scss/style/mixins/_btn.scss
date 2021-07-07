@@ -62,54 +62,20 @@
 @mixin btn-split-icon($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
   @include button-size($padding-vertical, $padding-horizontal, $font-size, $border-radius);
 
-  & .btn-font-icon {
-    width: $line-height + $padding-vertical + $padding-vertical;
-    margin-right: -$padding-horizontal;
-  }
-
-  & .btn-icon {
-    display: block;
-    align-self: center;
-    width: $line-height + $padding-vertical + $padding-vertical;
-    height: 1em;
-    margin-top: 5px;
-    margin-right: -$padding-horizontal;
-    float: right;
-  }
-
-  &.btn-split-icon {
+  &.btn-with-icon {
     display: inline-flex;
-
-    & .btn-font-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: $line-height + 2*$padding-vertical;
-      height: $line-height + 2*$padding-vertical;
-      margin-top: (-$padding-vertical - 0.06667rem);
-      margin-right: -$padding-horizontal;
-      margin-bottom: (-$padding-vertical - 0.06667rem);
-      margin-left: 20px;
-      border-left-width: 1px;
-      border-left-style: solid;
-    }
 
     & .btn-icon {
       display: block;
       align-self: center;
-      width: $line-height + 2*$padding-vertical;
-      height: $line-height + 2*$padding-vertical;
-      margin-top: (-$padding-vertical - 0.06667rem);
-      margin-right: -$padding-horizontal;
-      margin-bottom: (-$padding-vertical - 0.06667rem);
-      margin-left: 20px;
-      padding-top: $padding-vertical + ($line-height - $font-size)/2;
-      padding-right: $padding-vertical + ($line-height - $font-size)/2;
-      padding-bottom: $padding-vertical + ($line-height - $font-size)/2;
-      padding-left: $padding-vertical + ($line-height - $font-size)/2 -0.06667rem;
-      float: unset;
-      border-left-width: 1px;
-      border-left-style: solid;
+      width: 24px;
+      height: 16px;
+      margin-right: 8px;
+    }
+
+    & .btn-icon:last-child {
+      margin-left: 8px;
+      margin-right: 0px;
     }
   }
 }
@@ -155,17 +121,20 @@
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    border-color: $color-scorpion;
-    background: $color-wild-sand;
+    border-color: $color-dusty-gray;
+    background: $color-mercury;
     background-image: none;
-    color: $color-scorpion;
+    color: $color-dusty-gray;
+    opacity: 100%;
 
     &:hover,
     &:focus,
     &.focus {
-      border-color: $color-scorpion;
-      background-color: $color-wild-sand;
-      color: $color-scorpion;
+      border-color: $color-dusty-gray;
+      background: $color-mercury;
+      background-image: none;
+      color: $color-dusty-gray;
+      opacity: 100%;
     }
   }
 
@@ -232,13 +201,12 @@
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    @include opacity(.65);
     @include box-shadow(none);
 
     border-color: $main;
     background: $contrast;
     color: $main;
-
+opacity: 100%;
     cursor: $cursor-disabled;
   }
 
