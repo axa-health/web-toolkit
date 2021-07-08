@@ -1,6 +1,7 @@
 .btn-axa {
   @include typo-14();
   @include button-primary($color-button-primary, $color-button-secondary, $color-white);
+  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.2);
   border-width: 0;
   border-bottom-width: 2px;
   border-style: solid;
@@ -8,6 +9,18 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+
+  &:hover {
+    color: $color-white;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), $color-button-primary;
+  }
+
+  &:focus,
+  &:active,
+  &.focus {
+    border-width: 2px;
+  }
+
   &.btn.btn-lg {
     @include button-size($padding-large-vertical, $padding-large-horizontal, 14px,
       $btn-border-radius-lg);
@@ -21,6 +34,7 @@
     &.focus {
       border-width: 2px;
     }
+
   }
 
   &.btn.btn-sm {
@@ -28,6 +42,56 @@
       $font-size-sm, $line-height-sm, $btn-border-radius-sm);
     @include typo-14();
     padding: 9px 16px;
+  }
+
+  &.btn.btn-secondary {
+    @include button-primary($color-white, $color-button-primary, $color-button-primary);
+    border: 2px solid $color-button-primary;
+    box-shadow: none;
+    background: $color-white;
+
+    &:hover {
+      background: rgba($color-button-primary, .2);
+    }
+
+    &:active:hover {
+      background: rgba($color-button-primary, .2);
+    }
+
+    &:active {
+      background: rgba($color-button-primary, .2);
+      outline: none;
+      border: none;
+      box-sizing: border-box;
+      margin: 6px;
+      padding: 11px 20px;
+      box-shadow: 0 0 0 2px $color-button-primary,
+      0 0 0 4px $color-white,
+      0 0 0 6px $color-button-primary,
+    }
+
+    &.btn.btn-lg:active,
+    &.btn.btn-lg:focus {
+      padding: 15px 26px;
+    }
+
+    &.btn.btn-sm:active,
+    &.btn.btn-sm:focus {
+      padding: 7px 14px;
+    }
+
+
+    &:focus {
+      background: $color-white;
+      outline: none;
+      border: none;
+      box-sizing: border-box;
+      margin: 6px;
+      padding: 11px 20px;
+      box-shadow: 0 0 0 2px $color-button-primary,
+      0 0 0 4px $color-white,
+      0 0 0 6px $color-button-primary,
+    }
   }
 }
 
@@ -38,8 +102,6 @@
   // slight margin-bottom to prevent gluing buttons together when they break into two lines
   margin-bottom: 10px;
   padding: 13px 20px;
-  border: 0px;
-  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.2);
 
   &.btn-lg {
     // Reduce vertical padding by 1px because we increase border-width by 1px
@@ -74,17 +136,12 @@
     font-size: .9em;
   }
 
-  &:hover {
-    color: $color-white;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), $color-button-primary;
-  }
 
   &:focus,
   &:active,
   &.focus {
-      border: 2px solid $color-white;
-      outline: 2px solid $color-button-primary;
-    border-width: 2px;
+    border: 2px solid $color-white;
+    outline: 2px solid $color-button-primary;
     margin: 2px 2px 12px 2px;
     background: $color-button-primary;
   }
@@ -146,7 +203,7 @@
 .btn-icon-arrow {
 
   &:hover {
-    >svg {
+    > svg {
       animation: animate-arrow-right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
     }
   }
