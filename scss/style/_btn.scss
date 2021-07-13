@@ -3,7 +3,6 @@
   @include button-primary($color-button-primary, $color-button-secondary, $color-white);
   box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.2);
   border-width: 0;
-  border-bottom-width: 2px;
   border-style: solid;
   font-size: 14px;
   font-weight: 600;
@@ -24,9 +23,7 @@
   &.btn.btn-lg {
     @include button-size($padding-large-vertical, $padding-large-horizontal, 14px,
       $btn-border-radius-lg);
-
-    border-width: 0;
-    border-bottom-width: 2px;
+    border-width: 0px;
     padding: 17px 28px;
 
     &:focus,
@@ -49,6 +46,7 @@
     border: 2px solid $color-button-primary;
     box-shadow: none;
     background: $color-white;
+    padding: 11px 18px;
 
     &:hover {
       background: rgba($color-button-primary, .2);
@@ -64,20 +62,28 @@
       border: none;
       box-sizing: border-box;
       margin: 6px;
-      padding: 11px 20px;
+      padding: 12px 19px;
       box-shadow: 0 0 0 2px $color-button-primary,
       0 0 0 4px $color-white,
       0 0 0 6px $color-button-primary,
     }
 
+    &.btn.btn-lg {
+      padding: 15px 26px;
+    }
+
+    &.btn.btn-sm {
+      padding: 7px 14px;
+    }
+
     &.btn.btn-lg:active,
     &.btn.btn-lg:focus {
-      padding: 15px 26px;
+      padding: 16px 27px;
     }
 
     &.btn.btn-sm:active,
     &.btn.btn-sm:focus {
-      padding: 7px 14px;
+      padding: 8px 15px;
     }
 
 
@@ -92,7 +98,55 @@
       0 0 0 4px $color-white,
       0 0 0 6px $color-button-primary,
     }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+      border-color: $color-silver;
+      background: $color-white;
+      background-image: none;
+      color: $color-silver;
+      &:hover,
+      &:focus,
+      &.focus {
+        border-color: $color-silver;
+        background: $color-white;
+        background-image: none;
+        color: $color-silver;
+      }
+    }
+
+    &.btn-link {
+      padding: 13px 4px;
+      box-shadow: none;
+      border: none;
+      &:hover {
+        box-shadow: none;
+        border: none;
+      }
+      &:focus {
+        border: 2px solid $color-button-primary;
+        margin: 0px 0px;
+      }
+      &:active {
+        padding: 13px 4px;
+        margin: 2px 2px;
+        border: 2px solid $color-white;
+        outline: 2px solid $color-button-primary;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        color: $color-silver;
+        &:hover,
+        &:focus,
+        &.focus {
+          color: $color-silver;
+        }
+      }
+    }
   }
+
 }
 
 .btn {
