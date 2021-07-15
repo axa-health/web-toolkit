@@ -10,6 +10,12 @@ layout: demo.hbs
 <p>
   <button type="button" class="btn btn-axa">Default Button</button>
 </p>
+<p>
+  <button type="button" class="btn btn-axa btn-with-icon">{{> icon name="btn-arrow" classes="icon btn-icon"}}<span>Default Button with icon</span></button>
+</p>
+<p>
+  <button type="button" class="btn btn-axa btn-with-icon"><span>Default Button with icon right</span>{{> icon name="btn-arrow" classes="icon btn-icon"}}</button>
+</p>
 
 <p>
   <button type="button" class="btn btn-sm btn-axa">Small Button</button>
@@ -26,9 +32,16 @@ layout: demo.hbs
 <p>
   <button type="button" class="btn btn-axa btn-secondary">Secondary Button</button>
 </p>
+<p>
+  <button type="button" class="btn btn-axa btn-secondary btn-with-icon">{{> icon name="btn-arrow" classes="icon btn-icon"}} <span>Secondary Button with Icon</span></button>
+</p>
 
 <p>
-  <button type="button" class="btn btn-sm btn-axa btn-secondary">Small SecondaryButton</button>
+  <button type="button" class="btn btn-axa btn-secondary btn-with-icon"><span>Secondary Button with Icon Right</span>{{> icon name="btn-arrow" classes="icon btn-icon"}}</button>
+</p>
+
+<p>
+  <button type="button" class="btn btn-sm btn-axa btn-secondary">Small Secondary Button</button>
 </p>
 
 <p>
@@ -36,10 +49,19 @@ layout: demo.hbs
 </p>
 
 <p>
-  <button type="button" class="btn btn-axa btn-secondary btn-link">Link Button</button>
+  <button class="btn btn-axa btn-secondary btn-link">Link Button</button>
 </p>
 
 <p>
-  <button type="button" class="btn btn-axa btn-secondary btn-link" disabled>Disabled Link Button</button>
+  <button class="btn btn-axa btn-secondary btn-link btn-with-icon">{{> icon name="btn-arrow" classes="icon btn-icon"}}<span>Link Button with Icon</span></button>
+</p>
+
+<p>
+  <button class="btn btn-axa btn-secondary btn-link btn-with-icon"><span>Link Button with Icon Right</span>{{> icon name="btn-arrow" classes="icon btn-icon"}}</button>
+</p>
+
+
+<p>
+  <button class="btn btn-axa btn-secondary btn-link" disabled>Disabled Link Button</button>
 </p>
 
