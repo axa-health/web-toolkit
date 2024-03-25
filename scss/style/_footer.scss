@@ -49,6 +49,10 @@ $footer-sides-offset: 50px;
     padding-left: $footer-sides-offset;
   }
 
+  @include media-breakpoint-down(md) {
+    padding-bottom: 13px;
+    padding-top: 0;
+  }
 }
 
 .footer-bottom-social-light {

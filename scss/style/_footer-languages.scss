@@ -9,11 +9,10 @@
   padding-bottom: 16px;
   color: $footer-language-color;
   text-transform: uppercase;
+
   @include media-breakpoint-down(md) {
     justify-content: center;
     width: 100%;
-    padding-top: 5%;
-    padding-bottom: 5%;
   }
 }
 
