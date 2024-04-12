@@ -8,7 +8,7 @@ $footer-link-hover-color: $color-periwinkle;
 $footer-copyline-color: #ffffffcc;
 $footer-padding-lr: 30px;
 $footer-primary-color: $color-ocean-blue;
-$footer-bottom-border: #ffffffcc;
+$footer-bottom-border: #7798cb;
 $footer-sides-offset: 50px;
 
 .footer {
@@ -49,6 +49,10 @@ $footer-sides-offset: 50px;
     padding-left: $footer-sides-offset;
   }
 
+  @include media-breakpoint-down(md) {
+    padding-bottom: 13px;
+    padding-top: 0;
+  }
 }
 
 .footer-bottom-social-light {
